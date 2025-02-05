@@ -9,7 +9,6 @@ export interface Card {
   category_bonuses?: Record<string, number>
   tiered_rewards?: Array<{ min: number; rate: number }>
   partner_bonuses?: Record<string, number>
-  created_at?: string
 }
 
 export interface AllocationResult {

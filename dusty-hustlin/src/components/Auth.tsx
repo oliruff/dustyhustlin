@@ -18,8 +18,8 @@ export default function Auth() {
       
       if (error) throw error
       navigate('/dashboard')
-    } catch (error: any) {  // Add type assertion
-      alert(error.error_description || error.message)
+    } catch (error: any) {
+      alert(error.message || 'Authentication failed')
     } finally {
       setLoading(false)
     }
