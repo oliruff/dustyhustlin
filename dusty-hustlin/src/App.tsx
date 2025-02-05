@@ -1,7 +1,7 @@
-import { User } from '@supabase/supabase-js'
 import { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { supabase } from './lib/supabase'
+import { User } from '@supabase/supabase-js'
 import Auth from './components/Auth'
 import Dashboard from './pages/Dashboard'
 import Home from './pages/Home'
@@ -34,6 +34,7 @@ export default function App() {
             path="/auth"
             element={!user ? <Auth /> : <Navigate to="/dashboard" replace />}
           />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
     </Router>
