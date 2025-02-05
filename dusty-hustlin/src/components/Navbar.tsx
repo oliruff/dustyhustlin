@@ -8,19 +8,19 @@ interface NavbarProps {
 
 export default function Navbar({ user }: NavbarProps) {
   return (
-    <nav className="bg-primary text-white p-4">
+    <nav className="bg-primary text-white p-4 shadow-lg">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-xl font-bold">Dusty Hustlin'</Link>
         <div className="space-x-4">
           {user ? (
-            <button 
+            <button
               onClick={() => supabase.auth.signOut()}
-              className="hover:text-secondary"
+              className="hover:text-secondary transition-colors"
             >
               Sign Out
             </button>
           ) : (
-            <Link to="/auth" className="hover:text-secondary">
+            <Link to="/auth" className="hover:text-secondary transition-colors">
               Login
             </Link>
           )}

@@ -1,5 +1,3 @@
-import { supabase } from './supabase'
-
 export interface Card {
   id: string
   user_id: string
