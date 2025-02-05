@@ -20,7 +20,7 @@ export default function App() {
   }, [])
 
   return (
-    <Router>
+    <Router basename="/">
       <Navbar user={user} />
       <Routes>
         <Route path="/" element={<Home user={user} />} />
