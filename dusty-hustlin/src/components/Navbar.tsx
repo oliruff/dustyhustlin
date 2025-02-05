@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
 
-export default function Navbar({ user }: { user: any }) {
+export default function Navbar() {
   return (
     <nav className="bg-primary text-white p-4">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="text-xl font-bold">Dusty Hustlin'</Link>
         <div className="space-x-4">
-          {user ? (
+           (
             <button 
               onClick={() => supabase.auth.signOut()}
               className="hover:text-secondary"
@@ -18,7 +18,7 @@ export default function Navbar({ user }: { user: any }) {
             <Link to="/auth" className="hover:text-secondary">
               Login
             </Link>
-          )}
+          )
         </div>
       </div>
     </nav>

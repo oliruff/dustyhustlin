@@ -24,7 +24,7 @@ export default function App() {
     <Router basename="/">
       <Navbar user={user} />
       <Routes>
-        <Route path="/" element={<Home user={user} />} />
+      <Route path="/" element={<Home />} />
         <Route
           path="/dashboard"
           element={user ? <Dashboard /> : <Navigate to="/" />}

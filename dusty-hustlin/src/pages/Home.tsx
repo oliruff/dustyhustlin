@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-export default function Home() {
+export default function Home() {  // Remove props if not needed
   return (
     <div className="text-center py-20">
       <h1 className="text-4xl font-bold mb-4">Dusty Hustlin'</h1>
