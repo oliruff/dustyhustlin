@@ -1,3 +1,4 @@
+import { User } from '@supabase/supabase-js'
 import { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { supabase } from './lib/supabase'
@@ -5,8 +6,6 @@ import Auth from './components/Auth'
 import Dashboard from './pages/Dashboard'
 import Home from './pages/Home'
 import Navbar from './components/Navbar'
-import { User } from '@supabase/supabase-js'
-
 export default function App() {
   const [user, setUser] = useState<User | null>(null)
 
