@@ -7,9 +7,15 @@ export function useCards() {
 
   useEffect(() => {
     const fetchCards = async () => {
-      const { data } = await supabase.from('cards').select('*')
+      const { data, error } = await supabase
+        .from('cards')
+        .select('*')
+        .order('created_at', { ascending: false })
+      
       if (data) setCards(data)
+      if (error) console.error('Error fetching cards:', error)
     }
+
     fetchCards()
   }, [])
 
