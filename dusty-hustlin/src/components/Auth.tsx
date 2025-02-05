@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react'
-import { supabase } from '../lib/supabase'
+// Remove unused useEffect import
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { supabase } from '../lib/supabase'
 
 export default function Auth() {
   const [email, setEmail] = useState('')
@@ -17,7 +18,7 @@ export default function Auth() {
       
       if (error) throw error
       navigate('/dashboard')
-    } catch (error) {
+    } catch (error: any) {  // Add type assertion
       alert(error.error_description || error.message)
     } finally {
       setLoading(false)

@@ -5,17 +5,18 @@ import Auth from './components/Auth'
 import Dashboard from './pages/Dashboard'
 import Home from './pages/Home'
 import Navbar from './components/Navbar'
+import { User } from '@supabase/supabase-js'
 
 export default function App() {
   const [user, setUser] = useState<User | null>(null)
 
   useEffect(() => {
     const { data: authListener } = supabase.auth.onAuthStateChange(
-      async (event, session) => {
+      async (_event, session) => {  // Add underscore to unused param
         setUser(session?.user ?? null)
       }
     )
-
+  
     return () => authListener?.subscription.unsubscribe()
   }, [])
 
